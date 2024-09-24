@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(48, 57, 67);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.container h1 {
+  font-size: 10vw;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.687), rgb(18, 176, 204, 0.742), rgb(199, 35, 103, 0.788));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container h2 {
+  font-size: 3vw;
+  color: rgba(240, 248, 255, 0.733);
+}
+
+.prompt-area {
+  width: 100%;
+  height: 120px;
+  background-color: rgb(48, 57, 67);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+.prompt-area .text{
+text-wrap: wrap;
+}
+
+#prompt {
+  background-color: rgba(240, 248, 255, 0.42);
+  width: 60%;
+  height: 60%;
+  padding: 20px;
+  outline: none;
+  border: 2px solid rgba(240, 248, 255, 0.531);
+  border-right: none;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: inset 2px 2px 10px black, inset 2px 4px 10px black, 2px 4px 10px black;
+  font-size: 20px;
+  color: white;
+}
+
+#btn {
+  width: 10%;
+  height: 60%;
+  background: rgb(20, 181, 213);
+  border: 2px solid rgba(240, 248, 255, 0.531);
+  border-left: none;
+  border-radius: 0px 30px 30px 0px;
+  cursor: pointer;
+  transition: 0.40s all;
+}
+
+#btn:hover {
+  background: rgba(20, 181, 213, 0.644);
+}
+
+.chat-container {
+  width: 100%;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.user-chat-box {
+  width: 70%;
+  padding: 20px;
+  display: flex;
+  background-color: rgb(74, 146, 209);
+  border-radius: 30px 30px 0px 30px;
+  font-size: 20px;
+  box-shadow: 2px 2px 10px black;
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.ai-chat-box {
+  width: 70%;
+  padding: 20px;
+  display: flex;
+  background-color: rgba(74, 146, 209, 0.447);
+  border-radius: 30px 30px 30px 0px;
+  color: rgba(255, 255, 255, 0.692);
+  box-shadow: 2px 2px 10px black;
+  font-size: 20px;
+}
+
+.img {
+  width: 80px;
+  height: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 15vw; /* Increase font size for smaller screens */
+  }
+
+  .container h2 {
+    font-size: 4vw; /* Adjust heading size */
+  }
+
+  #prompt {
+    width: 75%; /* Increase width for mobile */
+  }
+
+  #btn {
+    width: 15%; /* Increase button size */
+  }
+
+  .user-chat-box,
+  .ai-chat-box {
+    width: 90%; /* Wider chat boxes */
+    font-size: 18px; /* Smaller font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 20vw; /* Make it even larger */
+  }
+  .prompt-area .text{
+    text-wrap: wrap;
+    }
+  #prompt {
+    width: 85%; /* Adjust width for small screens */
+  }
+
+  #btn {
+    width: 20%; /* Increase button size */
+  }
+
+  .user-chat-box,
+  .ai-chat-box {
+    font-size: 16px; /* Further reduce font size */
+  }
+}
