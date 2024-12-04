@@ -1,5 +1,4 @@
-let Api_Url =
-  "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyAQ8yoDsv266j32nqOiK_tln2kP2j_tQek";
+// app.js
 let prompt = document.querySelector("#prompt");
 let btn = document.querySelector("#btn");
 let userMessage = null;
@@ -35,13 +34,13 @@ async function getApiResponse(aiChatBox) {
     aiChatBox.querySelector(".loading").style.display = "none";
   }
 }
+
 function showLoading() {
   let html = `<div class="img">
    <img src="images/ai.png" alt="" width="50">
         </div> 
         <p class="text"></p>
-   
-      <img src="images/loading.gif" class="loading" height="50">`;
+        <img src="images/loading.gif" class="loading" height="50">`;
   let aiChatBox = createChatBox(html, "ai-chat-box");
   chatContainer.appendChild(aiChatBox);
   getApiResponse(aiChatBox);
@@ -65,6 +64,7 @@ btn.addEventListener("click", () => {
   prompt.value = "";
   setTimeout(showLoading, 500);
 });
+
 btn.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
